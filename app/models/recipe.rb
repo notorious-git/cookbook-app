@@ -27,4 +27,8 @@ class Recipe < ApplicationRecord
     result += "#{minutes} minute(s)" if minutes > 0
     return result
   end
+
+  def upper_case_chef
+    chef.upcase
+  end
 end

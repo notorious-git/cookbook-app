@@ -8,3 +8,4 @@ json.directions @recipe.directions
 json.formatted_ingredients @recipe.formatted_ingredients
 json.formatted_directions @recipe.formatted_directions
 json.created_at @recipe.friendly_created_at
+json.de_stuff @recipe.upper_case_chef
