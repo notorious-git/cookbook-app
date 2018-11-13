@@ -13,7 +13,10 @@ axios.get("/api/recipes").then(function(response) {
   var recipeContainer = document.querySelector(".row");
 
   recipes.forEach(function(recipe) {
-    recipeContainer.appendChild(recipeTemplate.content.cloneNode(true));
+    var copiedContent = recipeTemplate.content.cloneNode(true);
+    copiedContent.querySelector(".card-title").innerText = recipe.title;
+    copiedContent.querySelector(".card-img-top").src = recipe.image_url;
+    recipeContainer.appendChild(copiedContent);
   });
 });
 
