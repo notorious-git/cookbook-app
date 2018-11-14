@@ -18,10 +18,13 @@ class Api::RecipesController < ApplicationController
       chef: params["input_chef"],
       ingredients: params["input_ingredients"],
       directions: params["input_directions"],
-      user_id: current_user.id
+      user_id: 1
     )
-    @recipe.save
-    render "show.json.jbuilder"
+    if @recipe.save
+      render "show.json.jbuilder"
+    else
+      render json: {errors: @recipe.errors.full_messages}, status: 422
+    end
   end
 
   def show
